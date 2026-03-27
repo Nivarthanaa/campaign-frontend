@@ -329,3 +329,25 @@ a {
 .btn-muted:hover {
   background: rgba(255, 255, 255, 0.1);
 }
+
+/* Responsive Layout Utilities added to bottom of globals.css */
+.layout-dashboard { display: grid; grid-template-columns: minmax(300px, 1fr) 2fr; gap: 20px; }
+.layout-dashboard-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.layout-campaign { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; align-items: start; }
+.layout-stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+
+/* The rules inside here ONLY apply to screens smaller than 900px */
+@media(max-width: 900px) {
+  .layout-dashboard { grid-template-columns: 1fr; }
+  .layout-dashboard-inner { grid-template-columns: 1fr; }
+  .layout-campaign { grid-template-columns: 1fr; gap: 24px; }
+}
+
+/* The rules inside here ONLY apply to phones (smaller than 600px) */
+@media(max-width: 600px) {
+  .home-active .btn { padding: 16px 32px; font-size: 16px; width: 100%; display: block; text-align: center; }
+  .card { padding: 12px; }
+  .wrap { padding: 0 12px; }
+  h1 { font-size: 18px; }
+  .layout-stats-grid { grid-template-columns: repeat(2, 1fr); }
+}

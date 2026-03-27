@@ -104,7 +104,7 @@ export default function CampaignPage() {
         if (res?.error) return setErr(res.error);
 
         setCampaignId(res.campaignId);
-        router.push("/prediction");
+        router.push(`/results?campaignId=${res.campaignId}`);
     };
 
     const enums = schema?.enums || {};
